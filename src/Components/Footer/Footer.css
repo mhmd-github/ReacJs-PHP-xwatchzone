@@ -1,0 +1,170 @@
+
+
+
+
+.footer-root {
+    background-color: #34495e; 
+    color: #ecf0f1; 
+    padding: 40px 20px 0;
+    
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    padding-bottom: 30px;
+}
+
+
+
+
+.footer-section {
+    width: 25%; 
+    min-width: 200px; 
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+.footer-section h4 {
+    color: #3498db; 
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #2c3e50; 
+    padding-bottom: 5px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section a {
+    color: #bdc3c7; 
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #CEA051;
+}
+
+
+
+
+.brand-info {
+    min-width: 250px;
+}
+
+.brand-logo {
+    color: #CEA051; 
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.brand-motto {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+
+.contact-info .contact-detail {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-icon {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #3498db; 
+}
+
+.whatsapp-icon {
+    color: #25d366; 
+}
+
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #ecf0f1;
+    font-size: 20px;
+    padding: 8px;
+    border: 1px solid #4a627a;
+    border-radius: 50%;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-links a:hover {
+    background-color: #CEA051;
+    color: white;
+}
+
+
+
+
+
+.footer-copyright {
+    text-align: center;
+    padding: 15px 0;
+    border-top: 1px solid #2c3e50;
+    margin-top: 20px;
+}
+
+.footer-copyright p {
+    font-size: 13px;
+    color: #7f8c8d;
+    margin: 0;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        width: 100%;
+        min-width: unset;
+        padding: 0 10px;
+        margin-bottom: 25px;
+    }
+
+    .footer-section h4 {
+        margin-bottom: 10px;
+        border-bottom: none;
+    }
+
+    
+    .contact-info .contact-detail,
+    .brand-info {
+        justify-content: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}

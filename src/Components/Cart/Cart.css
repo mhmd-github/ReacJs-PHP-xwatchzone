@@ -1,0 +1,321 @@
+
+
+:root {
+    --gold-accent: #CEA051;
+    --gold-hover: #b88e42;
+    --dark-text: #1a1a1a;
+    --gray-text: #7f8c8d;
+    --bg-page: #f8f9fa;
+    --white: #ffffff;
+    --whatsapp-green: #25D366;
+    --whatsapp-dark: #128C7E;
+    --shadow-soft: 0 10px 30px rgba(0,0,0,0.05);
+    --shadow-hover: 0 15px 35px rgba(0,0,0,0.1);
+    --radius: 12px;
+}
+
+.cart-page-wrapper {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Inter', 'Helvetica Neue', sans-serif;
+    color: var(--dark-text);
+}
+
+.cart-page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--dark-text);
+    position: relative;
+    display: inline-block;
+}
+
+
+.cart-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 40px;
+    align-items: start;
+}
+
+
+.empty-cart-container {
+    text-align: center;
+    padding: 100px 0;
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+}
+.empty-icon {
+    font-size: 60px;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+.empty-cart-container h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+.empty-cart-container p {
+    color: var(--gray-text);
+}
+
+
+.cart-header-row {
+    display: grid;
+    grid-template-columns: 3fr 1.5fr 1fr;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    color: var(--gray-text);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+.h-qty { text-align: center; }
+.h-total { text-align: right; }
+
+
+.cart-card {
+    display: grid;
+    grid-template-columns: 3fr 1.5fr 1fr;
+    align-items: center;
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.cart-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(206, 160, 81, 0.2);
+}
+
+
+.card-product-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.img-wrapper {
+    width: 90px;
+    height: 90px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+.item-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+.item-info {
+    display: flex;
+    flex-direction: column;
+}
+.item-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--dark-text);
+    margin-bottom: 5px;
+}
+.item-unit-price {
+    font-size: 0.9rem;
+    color: var(--gray-text);
+}
+
+
+.card-qty-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.qty-selector {
+    display: flex;
+    align-items: center;
+    background: #f0f0f0;
+    border-radius: 50px;
+    padding: 5px;
+}
+.qty-selector button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background: var(--white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    transition: background 0.2s;
+    color: var(--dark-text);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.qty-selector button:hover {
+    background: var(--gold-accent);
+    color: white;
+}
+.qty-selector span {
+    width: 30px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+.remove-link {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+.remove-link:hover { opacity: 1; }
+
+
+.card-price-section {
+    text-align: right;
+}
+.item-row-total {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--gold-accent);
+}
+
+
+.summary-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    position: sticky;
+    top: 20px; 
+}
+
+.summary-card h3 {
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: var(--gray-text);
+    font-size: 1rem;
+}
+
+.total-row {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed #ddd;
+    font-weight: 700;
+    color: var(--dark-text);
+    font-size: 1.3rem;
+}
+
+.gold-text {
+    color: var(--gold-accent);
+}
+
+.checkout-btn-whatsapp {
+    width: 100%;
+    background-color: var(--whatsapp-green);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.checkout-btn-whatsapp:hover {
+    background-color: var(--whatsapp-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.btn-icon {
+    font-size: 1.2rem;
+}
+
+.secure-text {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #bdc3c7;
+    margin-top: 15px;
+}
+
+
+@media (max-width: 900px) {
+    .cart-content-grid {
+        grid-template-columns: 1fr; 
+        gap: 30px;
+    }
+    
+    .cart-header-row {
+        display: none; 
+    }
+
+    .cart-card {
+        grid-template-columns: 1fr; 
+        gap: 15px;
+        text-align: center;
+        padding: 20px 15px;
+    }
+
+    .card-product-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .card-qty-section {
+        flex-direction: row; 
+        justify-content: center;
+        width: 100%;
+        border-top: 1px solid #f5f5f5;
+        border-bottom: 1px solid #f5f5f5;
+        padding: 10px 0;
+    }
+    
+    .card-price-section {
+        text-align: center;
+    }
+    
+    .img-wrapper {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .item-name {
+        font-size: 1.2rem;
+    }
+
+    
+    .cart-summary-column {
+        order: 2; 
+    }
+}

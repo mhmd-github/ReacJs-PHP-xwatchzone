@@ -1,0 +1,291 @@
+
+:root {
+    --primary-color: #2c3e50; /* Dark Blue/Gray */
+    --accent-color: #C5A059; /* Elegant Gold */
+    --text-color: #333333;
+    --text-light: #666666;
+    --bg-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+    --glass-blur: 10px;
+    --shadow-soft: 0 2px 20px rgba(0, 0, 0, 0.05);
+    --transition-speed: 0.3s;
+}
+
+.NavRoot {
+    background-color: var(--bg-color);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-soft);
+    transition: all var(--transition-speed) ease;
+}
+
+.NavContainer {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* --- LEFT SECTION (Menu Btn) --- */
+.left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.menu-btn {
+    display: none; /* Hidden on desktop */
+    font-size: 24px;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: color var(--transition-speed);
+    padding: 5px;
+}
+
+.menu-btn:hover {
+    color: var(--accent-color);
+}
+
+/* --- CENTER SECTION (Logo) --- */
+.logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-img {
+    height: 65px; /* Slightly larger */
+    width: auto;
+    transition: transform var(--transition-speed);
+    /* Subtle drop shadow for logo */
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+/* --- RIGHT SECTION (Links & Cart) --- */
+.right-section {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Desktop Links */
+.desktop-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 30px;
+}
+
+.links-btn {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding: 5px 0;
+    transition: color var(--transition-speed);
+}
+
+.links-btn::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width var(--transition-speed) ease-in-out;
+}
+
+.links-btn:hover,
+.links-btn.active {
+    color: var(--accent-color);
+}
+
+.links-btn:hover::after,
+.links-btn.active::after {
+    width: 100%;
+}
+
+/* Cart Icon */
+.cart-icon-wrapper {
+    position: relative;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+.cart-icon-wrapper:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+    color: var(--accent-color);
+}
+
+.fright-icon {
+    font-size: 26px;
+}
+
+/* Cart Badge with Pulse Animation */
+.cart-badge {
+    position: absolute;
+top: -5px;
+  right: -3px;
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(197, 160, 89, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(197, 160, 89, 0); }
+}
+
+/* --- MOBILE MENU (Hidden by default on desktop) --- */
+.mobile-menu-container {
+    display: none; /* Logic handled via media query */
+}
+
+/* --- RESPONSIVE STYLES --- */
+@media (max-width: 900px) { /* Changed breakpoint to 900px for tablet support */
+    .NavRoot {
+        padding: 15px 20px;
+    }
+
+    .desktop-links {
+        display: none; /* Hide desktop links */
+    }
+
+    .menu-btn {
+        display: block; /* Show hamburger */
+    }
+
+    .logo {
+        justify-content: center;
+    }
+    
+    .right-section {
+        flex: 1;
+        gap: 10px;
+    }
+
+    /* Mobile Menu Drawer */
+    .mobile-menu-container {
+        display: block;
+    }
+
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1001;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity var(--transition-speed);
+    }
+
+    .menu-drawer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 280px; /* Width of the drawer */
+        height: 100vh;
+        background: white;
+        z-index: 1002;
+        transform: translateX(-100%);
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    /* Active State for Menu */
+    .active .menu-overlay {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .active .menu-drawer {
+        transform: translateX(0);
+    }
+
+    .drawer-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+        border-bottom: 1px solid #f0f0f0;
+        padding-bottom: 20px;
+    }
+
+    .drawer-logo {
+        width: 80px;
+    }
+
+    .close-menu-btn {
+        font-size: 24px;
+        color: var(--text-light);
+        cursor: pointer;
+        transition: color var(--transition-speed);
+    }
+
+    .close-menu-btn:hover {
+        color: var(--accent-color);
+    }
+
+    .mobile-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .mobile-link-item {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--primary-color);
+        text-decoration: none;
+        display: block;
+        padding: 10px 0;
+        border-bottom: 1px solid transparent;
+        transition: all var(--transition-speed);
+    }
+
+    .mobile-link-item:hover,
+    .mobile-link-item.active {
+        color: var(--accent-color);
+        padding-left: 10px; /* Indent on hover */
+        border-bottom-color: #f9f9f9;
+    }
+}
