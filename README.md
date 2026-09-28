@@ -95,20 +95,3 @@ A full-stack e-commerce web application for browsing, managing, and purchasing w
 📁 Project Directory Structure
 Plaintext
 
-xwatchzone/
-├── api/                   # PHP Backend API
-│   ├── conn.php           # Database Connection
-│   ├── login.php          # User / Admin Login Endpoint
-│   ├── getwatches.php     # Fetch Watch Items
-│   ├── addwatchs.php      # Insert New Watch
-│   └── deletewatches.php  # Delete Watch Endpoint
-│
-└── frontend/              # React.js Frontend
-    ├── public/
-    └── src/
-        ├── components/    # Reusable Components (Navbar, Footer, etc.)
-        ├── pages/         # Page Views (Cart, AboutUs, ContactUs, AddItems, Login)
-        ├── App.js         # Main Application Component & Routes
-        └── index.js       # React Application Entry Point
-
-
