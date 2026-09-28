@@ -1,3 +1,5 @@
+Markdown
+
 # ⌚ xwatch zone
 
 A full-stack e-commerce web application for browsing, managing, and purchasing watches. Built with a **React.js** frontend and a **PHP / MySQL (phpMyAdmin)** REST API backend.
@@ -65,3 +67,48 @@ A full-stack e-commerce web application for browsing, managing, and purchasing w
    $user = "root";
    $password = "";
    $dbname = "xwatchzone";
+
+3. Frontend Setup (React.js)
+
+    Open your terminal and navigate to the React frontend folder:
+    Bash
+
+    cd path/to/xwatchzone-frontend
+
+    Install dependencies:
+    Bash
+
+    npm install
+
+    Create a .env file in the root directory of your React project:
+    Code snippet
+
+    REACT_APP_API_URL=http://localhost/xwatchzone/api
+
+    Start the development server:
+    Bash
+
+    npm start
+
+    Open your browser at http://localhost:3000.
+
+📁 Project Directory Structure
+Plaintext
+
+xwatchzone/
+├── api/                   # PHP Backend API
+│   ├── conn.php           # Database Connection
+│   ├── login.php          # User / Admin Login Endpoint
+│   ├── getwatches.php     # Fetch Watch Items
+│   ├── addwatchs.php      # Insert New Watch
+│   └── deletewatches.php  # Delete Watch Endpoint
+│
+└── frontend/              # React.js Frontend
+    ├── public/
+    └── src/
+        ├── components/    # Reusable Components (Navbar, Footer, etc.)
+        ├── pages/         # Page Views (Cart, AboutUs, ContactUs, AddItems, Login)
+        ├── App.js         # Main Application Component & Routes
+        └── index.js       # React Application Entry Point
+
+
