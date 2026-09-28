@@ -91,7 +91,5 @@ A full-stack e-commerce web application for browsing, managing, and purchasing w
     npm start
 
     Open your browser at http://localhost:3000.
-
-📁 Project Directory Structure
-Plaintext
-
+	
+	Enjoy!
